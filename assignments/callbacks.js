@@ -26,27 +26,70 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 
-function getLength(arr, cb) {
+//function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
-}
+//}
 
-function last(arr, cb) {
+let getLength = (arr, cb) => {
+  // getLength passes the length of the array into the callback.
+  return cb(arr.length);
+}
+getLength(items, getLength => {
+  console.log(`The length of the array is: ${getLength}`)
+})
+/****************************************************/
+//function last(arr, cb) {
   // last passes the last item of the array into the callback.
-}
+//}
+const last = (arr, cb) => {
+  // last passes the last item of the array into the callback.
+ return cb(arr[3]);
 
-function sumNums(x, y, cb) {
+}
+ last(items, last => {
+   console.log(`The last item is: ${last}`)
+ })
+/****************************************************/
+
+//function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
+//}
 
-function multiplyNums(x, y, cb) {
+let sumNums = (x, y, cb) => {
+  // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x + y)
+}
+sumNums(2, 3, sumNums => {
+  console.log(`The sum of the numbers: ${sumNums}`)
+})
+
+/****************************************************/
+//function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
-}
+//}
 
-function contains(item, list, cb) {
+multiplyNums = (x, y, cb)=> {
+  // multiplyNums multiplies two numbers and passes the result to the callback.
+ return cb(x * y)
+}
+multiplyNums(3, 4, multiplyNums => {
+  console.log(`The product of the numbers: ${multiplyNums}`)
+})
+
+/****************************************************/
+//function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+//}
 
+let contains = (x, list, cb)=> {
+  // contains checks if an item is present inside of the given array/list.
+  // Pass true to the callback if it is, otherwise pass false.
+  return cb(list.includes(x));
+}
+contains("yo-yo", items, console.log);
+
+/****************************************************/
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
