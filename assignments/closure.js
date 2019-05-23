@@ -40,29 +40,34 @@ console.log(newCounter());
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
+  
   // Return an object that has two methods called `increment` and `decrement`.
 
-  let add = 0;
-  let sub = 0;
-  return function() {
-    add = add + 1;
-    return add;
-  }
+  var num = 0;
+    function increment(){
+       num += 1;
+       return num;
+    }
+    function decrement(){
+       num -= 1;
+       return num;
+    }
+    
+    return {
 
-  return function() {
-    sub = sub + 1;
-    return add;
-  }
-     
+       increment : increment,
+       decrement : decrement
+    
+    }  
 
 };
 
-const theCount = counterFactory();
+var theCount = counterFactory();
 
-//console.log(theCount());
-//theCount.increment();
-//theCount.increment();
+console.log(theCount.increment());
+console.log(theCount.increment());
+console.log(theCount.increment());
 
-//theCount.decrement();
-//theCount.decrement();
-//theCount.decrement();
+console.log(theCount.decrement());
+console.log(theCount.decrement());
+console.log(theCount.decrement());
