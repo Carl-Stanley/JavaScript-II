@@ -33,6 +33,7 @@ const newCounter = counter();
 
 // newCounter(); // 1
 // newCounter(); // 2
+console.log("Counter Function 1");
 console.log(newCounter());
 console.log(newCounter());
 console.log(newCounter());
@@ -63,7 +64,7 @@ const counterFactory = () => {
 };
 
 var theCount = counterFactory();
-
+console.log("Counter Function 2");
 console.log(theCount.increment());
 console.log(theCount.increment());
 console.log(theCount.increment());
